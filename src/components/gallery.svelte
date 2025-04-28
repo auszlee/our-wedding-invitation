@@ -30,17 +30,7 @@
 
 	const photos = [
 		{
-			src: photo10,
-			width: 1200,
-			height: 1800
-		},
-		{
 			src: photo2,
-			width: 1200,
-			height: 1800
-		},
-		{
-			src: photo3,
 			width: 1200,
 			height: 1800
 		},
@@ -48,6 +38,11 @@
 			src: photo4,
 			width: 2000,
 			height: 1333
+		},
+		{
+			src: photo3,
+			width: 1200,
+			height: 1800
 		},
 		{
 			src: photo5,
@@ -73,6 +68,11 @@
 			src: photo9,
 			width: 1200,
 			height: 1790
+		},
+		{
+			src: photo10,
+			width: 1200,
+			height: 1800
 		},
 		{
 			src: photo11,
