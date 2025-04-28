@@ -36,7 +36,7 @@
 		></iframe>
 	</div>
 	<p class="signature en">made with ♡ by Ji Eun & Hyo Wook</p>
-	<a class="github-icon" href="https://github.com/anthopark/our-wedding-invitation" target="_blank"
+	<a class="github-icon" href="https://github.com/jeleedev/our-wedding-invitation" target="_blank"
 		><Github size="1.1em" strokeWidth={1} /></a
 	>
 	<img class="location-deco" src={locationDeco} alt="" />
