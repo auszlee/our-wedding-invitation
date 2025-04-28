@@ -5,13 +5,12 @@
 	import { _ } from 'svelte-i18n';
 	import { localeStore } from '../i18n.svelte';
 	import { Clipboard, Github } from '@lucide/svelte';
-	import { PUBLIC_GOOGLE_MAPS_API_KEY } from '$env/static/public';
 
-	const googleMapsUrl = `https://www.google.com/maps/embed/v1/place?key=${PUBLIC_GOOGLE_MAPS_API_KEY}&q=${encodeURIComponent('108 Lamplighter, Irvine, CA 92620')}`;
+	const googleMapsUrl = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6322.860406727866!2d127.035685!3d37.592033!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cbcbc8d707a77%3A0x195d6ec549202318!2z6rOg66Ck64yA7ZWZ6rWQIOq1kOyasO2ajOq0gA!5e0!3m2!1sko!2skr!4v1745824760525!5m2!1sko!2skr"
 
 	function copyAddress() {
 		navigator.clipboard
-			.writeText('108 Lamplighter, Irvine, CA 92620')
+			.writeText('Seoul, Seongbuk District, Jongam-dong, 29-26')
 			.then(() => alert($_('location.address_copied')))
 			.catch(() => null);
 	}
@@ -20,12 +19,12 @@
 <img src={locationTopWave} class="location-top-wave" alt="" />
 <section class="location">
 	<h2 class="title {localeStore.locale}">{$_('location.title')}</h2>
-	<p class="venue en">Woodbury Community Association</p>
+	<p class="venue en">웨드유 웨딩 (구.고려스퀘어)</p>
 	<button class="copy-address en" onclick={copyAddress}>
 		<span class="clipboard-icon">
 			<Clipboard size="1.1em" />
 		</span>
-		<span class="address">108 Lamplighter, Irvine, CA 92620</span></button
+		<span class="address">Seoul, Seongbuk District, Jongam-dong, 29-26</span></button
 	>
 	<div class="map">
 		<iframe
@@ -36,7 +35,7 @@
 			src={googleMapsUrl}
 		></iframe>
 	</div>
-	<p class="signature en">made with ♡ by Emily & Anthony</p>
+	<p class="signature en">made with ♡ by Ji Eun & Hyo Wook</p>
 	<a class="github-icon" href="https://github.com/anthopark/our-wedding-invitation" target="_blank"
 		><Github size="1.1em" strokeWidth={1} /></a
 	>

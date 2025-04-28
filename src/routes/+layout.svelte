@@ -29,10 +29,10 @@
 		rel="stylesheet"
 		href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
 	/>
-	<meta property="og:title" content="Emily & Anthony's Wedding" />
+	<meta property="og:title" content="Ji Eun & Hyo Wook's Wedding" />
 	<meta property="og:description" content="Please join us on our most special day!" />
-	<meta property="og:image" content="https://emily-marries-anthony.com/preview.jpg" />
-	<meta property="og:url" content="https://emily-marries-anthony.com/" />
+	<meta property="og:image" content="https://jieun-marries-hyowook.com/preview.jpg" />
+	<meta property="og:url" content="https://jieun-marries-hyowook.com/" />
 	<meta property="og:type" content="website" />
 </svelte:head>
 
