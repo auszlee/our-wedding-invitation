@@ -2,6 +2,6 @@
 
 The mobile-first wedding invitation to our wedding. 
 
-[Korean version](https://emily-marries-anthony.com)
+[Korean version](https://jieun-marries-hyowook.com)
 
-[English](https://emily-marries-anthony.com/?lang=en)
+[English](https://jieun-marries-hyowook.com/?lang=en)

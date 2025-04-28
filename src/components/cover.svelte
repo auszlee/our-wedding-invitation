@@ -31,14 +31,14 @@
 	</div>
 
 	<div class="names-kr-box">
-		<span class="names kr">박건희</span>
+		<span class="names kr">김효욱</span>
 		<span class="names kr">그리고</span>
-		<span class="names kr">피아영</span>
+		<span class="names kr">이지은</span>
 	</div>
 
 	<div class="cover-title-container">
 		<div class="names-en-box">
-			<span class="names en-sacramento">Anthony & Emily</span>
+			<span class="names en-sacramento">Hyo Wook & Ji Eun</span>
 		</div>
 
 		<div class="event-date-and-place-box">
