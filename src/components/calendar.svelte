@@ -10,15 +10,15 @@
 </script>
 
 <section class="calendar">
-	<h2 class="title en">June</h2>
+	<h2 class="title en">September</h2>
 	<div class="calendar-content">
-		<img class="week-col" src={sundayCol} alt="sunday column" />
 		<img class="week-col" src={mondayCol} alt="monday column" />
 		<img class="week-col" src={tuesdayCol} alt="tuesday column" />
 		<img class="week-col" src={wednesdayCol} alt="wednesday column" />
 		<img class="week-col" src={thursdayCol} alt="thursday column" />
 		<img class="week-col" src={fridayCol} alt="friday column" />
 		<img class="week-col" src={saturdayCol} alt="saturday column" />
+		<img class="week-col" src={sundayCol} alt="sunday column" />
 	</div>
 	<img class="calendar-deco" src={calendarDeco} alt="calendar deco" />
 </section>
