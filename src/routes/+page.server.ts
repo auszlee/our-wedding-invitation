@@ -22,8 +22,8 @@ export const actions = {
 		const { data, error } = await resend.emails.send({
 			from: env.FROM_EMAIL,
 			to: env.TO_EMAIL,
-			subject: `[Wedding Invitation] RSVP - ${name}`,
-			text: `${rsvp}`
+			subject: `[결혼 초대] ${name}님 참석여부: ${rsvp}`,
+			text: `${name}님의 참석여부: ${rsvp}.`
 		});
 
 		if (error) {
