@@ -15,15 +15,14 @@
 		VITE_GROOM_MOTHER_BANK_ACCOUNT,
 		VITE_BRIDE_BANK_ACCOUNT,
 		VITE_BRIDE_FATHER_BANK_ACCOUNT,
-		VITE_BRIDE_MOTHER_BANK_ACCOUNT,
-		VITE_BANK_NAME
+		VITE_BRIDE_MOTHER_BANK_ACCOUNT
 	} = import.meta.env;
 
 	function copyAccount(account: string | undefined) {
 		if (!account) return;
 		navigator.clipboard
 			.writeText(account)
-			.then(() => alert(`${account} 계좌번호 복사`))
+			.then(() => alert(`${account} 복사`))
 			.catch(() => null);
 	}
 </script>
@@ -52,7 +51,7 @@
 									<Clipboard size="1.1em" />
 								</span>
 								<span class="account-number"
-									>{VITE_BANK_NAME} <span class="number-only">{VITE_GROOM_BANK_ACCOUNT}</span></span
+									>국민은행 <span class="number-only">{VITE_GROOM_BANK_ACCOUNT}</span></span
 								>
 							</button>
 						</div>
@@ -66,7 +65,7 @@
 									<Clipboard size="1.1em" />
 								</span>
 								<span class="account-number"
-									>{VITE_BANK_NAME}
+									>국민은행
 									<span class="number-only">{VITE_GROOM_FATHER_BANK_ACCOUNT}</span></span
 								>
 							</button>
@@ -81,7 +80,7 @@
 									<Clipboard size="1.1em" />
 								</span>
 								<span class="account-number"
-									>{VITE_BANK_NAME}
+									>국민은행
 									<span class="number-only">{VITE_GROOM_MOTHER_BANK_ACCOUNT}</span></span
 								>
 							</button>
@@ -107,7 +106,7 @@
 									<Clipboard size="1.1em" />
 								</span>
 								<span class="account-number"
-									>{VITE_BANK_NAME} <span class="number-only">{VITE_BRIDE_BANK_ACCOUNT}</span></span
+									>토스뱅크 <span class="number-only">{VITE_BRIDE_BANK_ACCOUNT}</span></span
 								>
 							</button>
 						</div>
@@ -121,7 +120,7 @@
 									<Clipboard size="1.1em" />
 								</span>
 								<span class="account-number"
-									>{VITE_BANK_NAME}
+									>농협은행
 									<span class="number-only">{VITE_BRIDE_FATHER_BANK_ACCOUNT}</span></span
 								>
 							</button>
@@ -136,7 +135,7 @@
 									<Clipboard size="1.1em" />
 								</span>
 								<span class="account-number"
-									>{VITE_BANK_NAME}
+									>농협은행
 									<span class="number-only">{VITE_BRIDE_MOTHER_BANK_ACCOUNT}</span></span
 								>
 							</button>
