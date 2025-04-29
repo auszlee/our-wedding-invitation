@@ -40,11 +40,6 @@
 		"title": "Gallery",
 		"sub_title": "Click to enlarge the images."
 	},
-	"account": {
-		"title": "Gift Registry",
-		"sub_title": "Your presence is the greatest gift of all.",
-		"copied": "Account number copied!"
-	},
 	"location": {
 		"title": "Location",
 		"address_copied": "The address is copied!"

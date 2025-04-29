@@ -30,116 +30,122 @@
 
 <img src={locationTopWave} class="location-top-wave" alt="" />
 <section class="account">
-	<h2 class="title {localeStore.locale}">{$_('account.title')}</h2>
-	<p class="sub-title {localeStore.locale}">{$_('account.sub_title')}</p>
-	<div class="account-info">
-		<div class="accordion">
-			<div class="heading">
-				<button class="trigger {localeStore.locale}" onclick={() => (isGroomOpen = !isGroomOpen)}>
-					신랑측
-				</button>
-				<div class="chevron-down-container {localeStore.locale}" class:rotate={isGroomOpen}>
-					<ChevronDown strokeWidth={1.25} />
+	{#if localeStore.locale === 'kr'}
+		<h2 class="title {localeStore.locale}">{$_('account.title')}</h2>
+		<p class="sub-title {localeStore.locale}">{$_('account.sub_title')}</p>
+		<div class="account-info">
+			<div class="accordion">
+				<div class="heading">
+					<button class="trigger {localeStore.locale}" onclick={() => (isGroomOpen = !isGroomOpen)}>
+						신랑측
+					</button>
+					<div class="chevron-down-container {localeStore.locale}" class:rotate={isGroomOpen}>
+						<ChevronDown strokeWidth={1.25} />
+					</div>
 				</div>
+				{#if isGroomOpen}
+					<div class="content {localeStore.locale}" transition:slide={{ duration: 350 }}>
+						<div class="account-group">
+							<p class="account-title">신랑 | 김효욱</p>
+							<button class="copy-account" onclick={() => copyAccount(VITE_GROOM_BANK_ACCOUNT)}>
+								<span class="clipboard-icon">
+									<Clipboard size="1.1em" />
+								</span>
+								<span class="account-number"
+									>{VITE_BANK_NAME} <span class="number-only">{VITE_GROOM_BANK_ACCOUNT}</span></span
+								>
+							</button>
+						</div>
+						<div class="account-group">
+							<p class="account-title">신랑 아버지 | 김용현</p>
+							<button
+								class="copy-account"
+								onclick={() => copyAccount(VITE_GROOM_FATHER_BANK_ACCOUNT)}
+							>
+								<span class="clipboard-icon">
+									<Clipboard size="1.1em" />
+								</span>
+								<span class="account-number"
+									>{VITE_BANK_NAME}
+									<span class="number-only">{VITE_GROOM_FATHER_BANK_ACCOUNT}</span></span
+								>
+							</button>
+						</div>
+						<div class="account-group">
+							<p class="account-title">신랑 어머니 | 신지원</p>
+							<button
+								class="copy-account"
+								onclick={() => copyAccount(VITE_GROOM_MOTHER_BANK_ACCOUNT)}
+							>
+								<span class="clipboard-icon">
+									<Clipboard size="1.1em" />
+								</span>
+								<span class="account-number"
+									>{VITE_BANK_NAME}
+									<span class="number-only">{VITE_GROOM_MOTHER_BANK_ACCOUNT}</span></span
+								>
+							</button>
+						</div>
+					</div>
+				{/if}
 			</div>
-			{#if isGroomOpen}
-				<div class="content {localeStore.locale}" transition:slide={{ duration: 350 }}>
-					<div class="account-group">
-						<p class="account-title">신랑 | 김효욱</p>
-						<button class="copy-account" onclick={() => copyAccount(VITE_GROOM_BANK_ACCOUNT)}>
-							<span class="clipboard-icon">
-								<Clipboard size="1.1em" />
-							</span>
-							<span class="account-number"
-								>토스뱅크 <span class="number-only">{VITE_GROOM_BANK_ACCOUNT}</span></span
-							>
-						</button>
-					</div>
-					<div class="account-group">
-						<p class="account-title">신랑 아버지 | 김용현</p>
-						<button
-							class="copy-account"
-							onclick={() => copyAccount(VITE_GROOM_FATHER_BANK_ACCOUNT)}
-						>
-							<span class="clipboard-icon">
-								<Clipboard size="1.1em" />
-							</span>
-							<span class="account-number"
-								>토스뱅크 <span class="number-only">{VITE_GROOM_FATHER_BANK_ACCOUNT}</span></span
-							>
-						</button>
-					</div>
-					<div class="account-group">
-						<p class="account-title">신랑 어머니 | 신지원</p>
-						<button
-							class="copy-account"
-							onclick={() => copyAccount(VITE_GROOM_MOTHER_BANK_ACCOUNT)}
-						>
-							<span class="clipboard-icon">
-								<Clipboard size="1.1em" />
-							</span>
-							<span class="account-number"
-								>토스뱅크 <span class="number-only">{VITE_GROOM_MOTHER_BANK_ACCOUNT}</span></span
-							>
-						</button>
+			<div class="accordion">
+				<div class="heading">
+					<button class="trigger {localeStore.locale}" onclick={() => (isBrideOpen = !isBrideOpen)}>
+						신부측
+					</button>
+					<div class="chevron-down-container {localeStore.locale}" class:rotate={isBrideOpen}>
+						<ChevronDown strokeWidth={1.25} />
 					</div>
 				</div>
-			{/if}
-		</div>
-		<div class="accordion">
-			<div class="heading">
-				<button class="trigger {localeStore.locale}" onclick={() => (isBrideOpen = !isBrideOpen)}>
-					신부측
-				</button>
-				<div class="chevron-down-container {localeStore.locale}" class:rotate={isBrideOpen}>
-					<ChevronDown strokeWidth={1.25} />
-				</div>
+				{#if isBrideOpen}
+					<div class="content {localeStore.locale}" transition:slide={{ duration: 350 }}>
+						<div class="account-group">
+							<p class="account-title">신부 | 이지은</p>
+							<button class="copy-account" onclick={() => copyAccount(VITE_BRIDE_BANK_ACCOUNT)}>
+								<span class="clipboard-icon">
+									<Clipboard size="1.1em" />
+								</span>
+								<span class="account-number"
+									>{VITE_BANK_NAME} <span class="number-only">{VITE_BRIDE_BANK_ACCOUNT}</span></span
+								>
+							</button>
+						</div>
+						<div class="account-group">
+							<p class="account-title">신부 아버지 | 이한욱</p>
+							<button
+								class="copy-account"
+								onclick={() => copyAccount(VITE_BRIDE_FATHER_BANK_ACCOUNT)}
+							>
+								<span class="clipboard-icon">
+									<Clipboard size="1.1em" />
+								</span>
+								<span class="account-number"
+									>{VITE_BANK_NAME}
+									<span class="number-only">{VITE_BRIDE_FATHER_BANK_ACCOUNT}</span></span
+								>
+							</button>
+						</div>
+						<div class="account-group">
+							<p class="account-title">신부 어머니 | 신현하</p>
+							<button
+								class="copy-account"
+								onclick={() => copyAccount(VITE_BRIDE_MOTHER_BANK_ACCOUNT)}
+							>
+								<span class="clipboard-icon">
+									<Clipboard size="1.1em" />
+								</span>
+								<span class="account-number"
+									>{VITE_BANK_NAME}
+									<span class="number-only">{VITE_BRIDE_MOTHER_BANK_ACCOUNT}</span></span
+								>
+							</button>
+						</div>
+					</div>
+				{/if}
 			</div>
-			{#if isBrideOpen}
-				<div class="content {localeStore.locale}" transition:slide={{ duration: 350 }}>
-					<div class="account-group">
-						<p class="account-title">신부 | 이지은</p>
-						<button class="copy-account" onclick={() => copyAccount(VITE_BRIDE_BANK_ACCOUNT)}>
-							<span class="clipboard-icon">
-								<Clipboard size="1.1em" />
-							</span>
-							<span class="account-number"
-								>토스뱅크 <span class="number-only">{VITE_BRIDE_BANK_ACCOUNT}</span></span
-							>
-						</button>
-					</div>
-					<div class="account-group">
-						<p class="account-title">신부 아버지 | 이한욱</p>
-						<button
-							class="copy-account"
-							onclick={() => copyAccount(VITE_BRIDE_FATHER_BANK_ACCOUNT)}
-						>
-							<span class="clipboard-icon">
-								<Clipboard size="1.1em" />
-							</span>
-							<span class="account-number"
-								>토스뱅크 <span class="number-only">{VITE_BRIDE_FATHER_BANK_ACCOUNT}</span></span
-							>
-						</button>
-					</div>
-					<div class="account-group">
-						<p class="account-title">신부 어머니 | 신현하</p>
-						<button
-							class="copy-account"
-							onclick={() => copyAccount(VITE_BRIDE_MOTHER_BANK_ACCOUNT)}
-						>
-							<span class="clipboard-icon">
-								<Clipboard size="1.1em" />
-							</span>
-							<span class="account-number"
-								>토스뱅크 <span class="number-only">{VITE_BRIDE_MOTHER_BANK_ACCOUNT}</span></span
-							>
-						</button>
-					</div>
-				</div>
-			{/if}
 		</div>
-	</div>
+	{/if}
 </section>
 
 <style lang="scss">
