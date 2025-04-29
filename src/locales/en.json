@@ -33,12 +33,17 @@
 			"menu_title": "Duet Entrée Course",
 			"beef": "Braised roasted short rib filet",
 			"fish": "Miso glazed Hawaiian butterfish",
-			"vegetarian": "We’re also offering a vegetarian option—just let us know in advance if that’s your preference!"
+			"vegetarian": "We're also offering a vegetarian option—just let us know in advance if that's your preference!"
 		}
 	},
 	"gallery": {
 		"title": "Gallery",
 		"sub_title": "Click to enlarge the images."
+	},
+	"account": {
+		"title": "Gift Registry",
+		"sub_title": "Your presence is the greatest gift of all.",
+		"copied": "Account number copied!"
 	},
 	"location": {
 		"title": "Location",
