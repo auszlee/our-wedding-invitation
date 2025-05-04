@@ -29,7 +29,7 @@
 		rel="stylesheet"
 		href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
 	/>
-	<meta property="og:title" content="효욱 & 지은 결혼식에 초대합니다" />
+	<meta property="og:title" content="효욱 & 지은 결혼식에 초대합니다 💍" />
 	<meta property="og:description" content="2025.9.6 토요일 오후 1시" />
 	<meta property="og:image" content="https://our-wedding-invitation-7gp.pages.dev/preview.jpg" />
 	<meta property="og:url" content="https://our-wedding-invitation-7gp.pages.dev/" />
