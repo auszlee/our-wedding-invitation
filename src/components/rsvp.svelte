@@ -5,7 +5,7 @@
 	import { enhance } from '$app/forms';
 	import RsvpSelect from './rsvp-select.svelte';
 	import rsvpDeco from '$lib/assets/rsvp-deco.svg';
-	import RsvpAccordion from './rsvp-accordion.svelte';
+	// import RsvpAccordion from './rsvp-accordion.svelte';
 
 	let { form } = $props();
 
@@ -92,14 +92,15 @@
 		{/if}
 	</div>
 
-	<div class="accordion-container">
-		<RsvpAccordion />
-	</div>
+	<!-- <div class="accordion-container"> -->
+	<!-- <RsvpAccordion /> -->
+	<!-- </div> -->
 </section>
 
 <style lang="scss">
 	section.rsvp {
-		padding: 4.5em 3.5em;
+		padding: 3.5em 3.5em;
+		background-color: $white;
 	}
 
 	.header {
@@ -146,7 +147,7 @@
 	input.fullname {
 		padding: 0.4em 0.8em;
 		width: 100%;
-		border: 1px solid $white-2;
+		border: 1px solid $bg-color-1;
 		border-radius: 4px;
 		letter-spacing: 0.02em;
 
@@ -164,6 +165,7 @@
 
 	.select-container {
 		margin-top: 1em;
+		border: 1px solid $bg-color-1;
 	}
 
 	button.send {
@@ -214,7 +216,6 @@
 
 	.submit-message {
 		margin-top: 0.5em;
-		height: 1.5em;
 
 		.kr {
 			font-size: 0.9rem;
@@ -233,10 +234,10 @@
 		}
 	}
 
-	.accordion-container {
-		margin-top: 2em;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
+	// .accordion-container {
+	// 	margin-top: 2em;
+	// 	display: flex;
+	// 	flex-direction: column;
+	// 	align-items: center;
+	// }
 </style>
