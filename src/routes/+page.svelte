@@ -13,8 +13,8 @@
 
 <Cover />
 <Letter />
-<Rsvp {form} />
 <Gallery />
 <Calendar />
 <Account />
+<Rsvp {form} />
 <Location />
