@@ -1,12 +1,16 @@
 import type { Actions } from './$types';
 import { Resend } from 'resend';
-import { env } from '$env/dynamic/private';
+import { env as nodeEnv } from '$env/dynamic/private';
 import { fail } from '@sveltejs/kit';
 
-const resend = new Resend(env.RESEND_API_KEY);
-
 export const actions = {
-	rsvp: async ({ request }) => {
+	rsvp: async ({ request, platform }) => {
+		const cfEnv = platform?.env;
+		const apiKey = cfEnv?.RESEND_API_KEY ?? nodeEnv.RESEND_API_KEY;
+		const fromEmail = cfEnv?.FROM_EMAIL ?? nodeEnv.FROM_EMAIL;
+		const toEmail = cfEnv?.TO_EMAIL ?? nodeEnv.TO_EMAIL;
+		const resend = new Resend(apiKey);
+
 		const formData = await request.formData();
 		const name = formData.get('fullname')?.toString().trim();
 		const rsvp = formData.get('rsvp')?.toString();
@@ -20,8 +24,8 @@ export const actions = {
 		}
 
 		const { data, error } = await resend.emails.send({
-			from: env.FROM_EMAIL,
-			to: env.TO_EMAIL,
+			from: fromEmail,
+			to: toEmail,
 			subject: `[결혼 초대] ${name}님 참석여부: ${rsvp}`,
 			text: `${name}님의 참석여부: ${rsvp}.`
 		});
