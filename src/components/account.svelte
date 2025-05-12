@@ -65,7 +65,7 @@
 									<Clipboard size="1.1em" />
 								</span>
 								<span class="account-number"
-									>국민은행
+									>하나은행
 									<span class="number-only">{VITE_GROOM_FATHER_BANK_ACCOUNT}</span></span
 								>
 							</button>
