@@ -1,12 +1,24 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import locationDeco from '$lib/assets/location-deco.svg';
 	import { _ } from 'svelte-i18n';
 	import { localeStore } from '../i18n.svelte';
 	import { Clipboard, Github } from '@lucide/svelte';
 	import { slide } from 'svelte/transition';
 
-	const googleMapsUrl =
-		'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6322.860406727866!2d127.035685!3d37.592033!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cbcbc8d707a77%3A0x195d6ec549202318!2z6rOg66Ck64yA7ZWZ6rWQIOq1kOyasO2ajOq0gA!5e0!3m2!1sko!2skr!4v1745824760525!5m2!1sko!2skr';
+	onMount(() => {
+		// 카카오 객체가 로드되었는지 확인
+		var container = document.getElementById('kakaomap');
+		var options = {
+			center: new kakao.maps.LatLng(37.59203234903392, 127.03569422628917),
+			level: 3
+		};
+
+		var kakaomap = new kakao.maps.Map(container, options);
+		var markerPosition = options.center;
+		var marker = new kakao.maps.Marker({ position: markerPosition });
+		marker.setMap(kakaomap);
+	});
 
 	function copyAddress() {
 		navigator.clipboard
@@ -15,6 +27,10 @@
 			.catch(() => null);
 	}
 </script>
+
+<svelte:head>
+	<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a6f047a232b41430897e05564b19c29f"></script>
+</svelte:head>
 
 <section class="location">
 	<h2 class="title {localeStore.locale}">{$_('location.title')}</h2>
@@ -25,7 +41,9 @@
 		</span>
 		<span class="address">서울특별시 성북구 종암동 29-26</span></button
 	>
-	<div class="map">
+	<div id="kakaomap" class="map"></div>
+
+	<!-- <div class="map">
 		<iframe
 			class="google-maps"
 			title="google maps"
@@ -33,7 +51,7 @@
 			referrerpolicy="no-referrer-when-downgrade"
 			src={googleMapsUrl}
 		></iframe>
-	</div>
+	</div> -->
 	<div class="content {localeStore.locale}" transition:slide={{ duration: 350 }}>
 		<div class="transportation-info">
 			<div class="info-group">
