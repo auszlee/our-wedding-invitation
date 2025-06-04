@@ -9,16 +9,11 @@
 	onMount(() => {
 		// 카카오 객체가 로드되었는지 확인
 		if (typeof kakao !== 'undefined' && kakao.maps) {
-			initializeMap();
+			kakao.maps.load(() => {
+				initializeMap();
+			});
 		} else {
-			// API 로드가 완료되면 실행
-			window.onload = () => {
-				if (typeof kakao !== 'undefined' && kakao.maps) {
-					initializeMap();
-				} else {
-					console.error('카카오 지도 API를 로드하지 못했습니다.');
-				}
-			};
+			console.error('카카오 지도 API를 로드하지 못했습니다.');
 		}
 	});
 	function initializeMap() {
