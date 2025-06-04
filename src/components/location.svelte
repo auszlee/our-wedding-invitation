@@ -38,13 +38,13 @@
 		<div class="transportation-info">
 			<div class="info-group">
 				<p class="info-title">지하철</p>
-				<p class="info-content">지하철 6호선 고려대역 3번 출구. 직진 도보 3분 내외</p>
+				<p class="info-content">지하철 6호선 고려대역 2번 출구 (도보 3분)</p>
 			</div>
 			<div class="info-group">
 				<p class="info-title">버스</p>
 				<p class="info-content">정류장명: 고려대학교 앞</p>
-				<p class="info-content">간선 101, 144, 173, 273</p>
-				<p class="info-content">지선: 111, 1017, 1111, 1222, 2222, 7211</p>
+				<p class="info-content">간선 101, 111, 144, 173, 273</p>
+				<p class="info-content">지선: 1017, 1111, 1222, 2222, 7211</p>
 			</div>
 			<div class="info-group">
 				<p class="info-title">주차</p>
