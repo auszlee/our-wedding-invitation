@@ -6,28 +6,30 @@
 	import { Clipboard, Github } from '@lucide/svelte';
 	import { slide } from 'svelte/transition';
 
-	onMount(() => {
-		// 카카오 객체가 로드되었는지 확인
-		if (typeof kakao !== 'undefined' && kakao.maps) {
-			kakao.maps.load(() => {
-				initializeMap();
-			});
-		} else {
-			console.error('카카오 지도 API를 로드하지 못했습니다.');
-		}
-	});
 	function initializeMap() {
-		var container = document.getElementById('kakaomap');
-		var options = {
-			center: new kakao.maps.LatLng(37.59203234903392, 127.03569422628917), // 종암동 좌표
+		const container = document.getElementById('kakaomap');
+		const center = new kakao.maps.LatLng(37.59203234903392, 127.03569422628917);
+		const options = {
+			center,
 			level: 3
 		};
-
-		var kakaomap = new kakao.maps.Map(container, options);
-		var markerPosition = options.center;
-		var marker = new kakao.maps.Marker({ position: markerPosition });
-		marker.setMap(kakaomap);
+		const map = new kakao.maps.Map(container, options);
+		const marker = new kakao.maps.Marker({ position: center });
+		marker.setMap(map);
 	}
+
+	onMount(() => {
+		const waitForKakao = () => {
+			if (typeof kakao !== 'undefined' && kakao.maps) {
+				kakao.maps.load(() => {
+					initializeMap();
+				});
+			} else {
+				setTimeout(waitForKakao, 100);
+			}
+		};
+		waitForKakao();
+	});
 
 	function copyAddress() {
 		navigator.clipboard
@@ -38,7 +40,9 @@
 </script>
 
 <svelte:head>
-	<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a6f047a232b41430897e05564b19c29f"></script>
+	<script
+		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a6f047a232b41430897e05564b19c29f&autoload=false"
+	></script>
 </svelte:head>
 
 <section class="location">
