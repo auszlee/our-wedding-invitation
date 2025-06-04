@@ -8,9 +8,23 @@
 
 	onMount(() => {
 		// 카카오 객체가 로드되었는지 확인
+		if (typeof kakao !== 'undefined' && kakao.maps) {
+			initializeMap();
+		} else {
+			// API 로드가 완료되면 실행
+			window.onload = () => {
+				if (typeof kakao !== 'undefined' && kakao.maps) {
+					initializeMap();
+				} else {
+					console.error('카카오 지도 API를 로드하지 못했습니다.');
+				}
+			};
+		}
+	});
+	function initializeMap() {
 		var container = document.getElementById('kakaomap');
 		var options = {
-			center: new kakao.maps.LatLng(37.59203234903392, 127.03569422628917),
+			center: new kakao.maps.LatLng(37.59203234903392, 127.03569422628917), // 종암동 좌표
 			level: 3
 		};
 
@@ -18,7 +32,7 @@
 		var markerPosition = options.center;
 		var marker = new kakao.maps.Marker({ position: markerPosition });
 		marker.setMap(kakaomap);
-	});
+	}
 
 	function copyAddress() {
 		navigator.clipboard
