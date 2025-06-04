@@ -14,6 +14,7 @@
 	<div class="header">
 		<img class="header-deco" src={letterDeco} alt="letter header deco" />
 		<h2 class="title {localeStore.locale}">{$_('letter.date')}</h2>
+		<h2 class="title-time {localeStore.locale}">{$_('letter.date_time')}</h2>
 		<p class="sub-title {localeStore.locale}">{$_('letter.sub_title')}</p>
 	</div>
 
@@ -66,12 +67,27 @@
 
 		&.kr {
 			@extend .title-font-kr;
-			margin-bottom: 0.4em;
 		}
 
 		&.en {
 			@extend .title-font-en;
-			margin-bottom: 0.2em;
+		}
+	}
+
+	.title-time {
+		color: $primary-color;
+		letter-spacing: 1px;
+
+		&.kr {
+			@extend .title-font-kr;
+			margin-bottom: 0.5em;
+			font-size: 1rem;
+		}
+
+		&.en {
+			@extend .title-font-en;
+			margin-bottom: 0.3em;
+			font-size: 1rem;
 		}
 	}
 
