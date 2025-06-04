@@ -7,15 +7,25 @@
 	import { slide } from 'svelte/transition';
 
 	onMount(() => {
-		// 카카오 객체가 로드되었는지 확인
+		// API 로드 상태를 확인하고 초기화
 		if (typeof kakao !== 'undefined' && kakao.maps) {
 			kakao.maps.load(() => {
 				initializeMap();
 			});
 		} else {
-			console.error('카카오 지도 API를 로드하지 못했습니다.');
+			// API가 아직 로드되지 않은 경우, window.onload를 사용하여 로드 완료를 기다림
+			window.onload = () => {
+				if (typeof kakao !== 'undefined' && kakao.maps) {
+					kakao.maps.load(() => {
+						initializeMap();
+					});
+				} else {
+					console.error('카카오 지도 API를 로드하지 못했습니다.');
+				}
+			};
 		}
 	});
+
 	function initializeMap() {
 		var container = document.getElementById('kakaomap');
 		var options = {
