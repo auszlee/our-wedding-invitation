@@ -32,9 +32,11 @@
 	});
 
 	function copyAddress() {
+		const address = $_('location.address');
+
 		navigator.clipboard
-			.writeText('서울특별시 성북구 종암동 29-26')
-			.then(() => alert($_('서울특별시 성북구 종암동 29-26')))
+			.writeText(address)
+			.then(() => alert($_(address)))
 			.catch(() => null);
 	}
 </script>
@@ -47,12 +49,12 @@
 
 <section class="location">
 	<h2 class="title {localeStore.locale}">{$_('location.title')}</h2>
-	<p class="venue {localeStore.locale}">웨드유 웨딩 (구.고려스퀘어)</p>
+	<p class="venue {localeStore.locale}">{$_('location.venue')}</p>
 	<button class="copy-address {localeStore.locale}" onclick={copyAddress}>
 		<span class="clipboard-icon">
 			<Clipboard size="1.1em" />
 		</span>
-		<span class="address">서울특별시 성북구 종암동 29-26</span></button
+		<span class="address">{$_('location.address')}</span></button
 	>
 	<div id="kakaomap" class="map"></div>
 

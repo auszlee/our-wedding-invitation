@@ -47,6 +47,8 @@
 	},
 	"location": {
 		"title": "오시는 길",
-		"address_copied": "주소를 복사했습니다."
+		"address_copied": "주소를 복사했습니다.",
+		"venue": "웨드유 웨딩 (구.고려스퀘어)",
+		"address": "서울특별시 성북구 종암동 29-26"
 	}
 }

@@ -8,6 +8,7 @@
 	},
 	"letter": {
 		"date": "9.6.2025",
+		"date_time": "1:00 pm",
 		"sub_title": "You're invited to our wedding!",
 		"letter_content": "You've been with us through so many unforgettable moments — college days, camping trips, and celebrating life together.\nPlease join us for one of the biggest milestones yet! We'd be overjoyed to have you witness and celebrate our wedding as we embark on this new chapter together."
 	},
@@ -42,6 +43,8 @@
 	},
 	"location": {
 		"title": "Location",
-		"address_copied": "The address is copied!"
+		"address_copied": "The address is copied!",
+		"venue": "Weedyu Wedding (formerly Goryo Square)",
+		"address": "29-26 Jongam-dong, Seongbuk District, Seoul"
 	}
 }
