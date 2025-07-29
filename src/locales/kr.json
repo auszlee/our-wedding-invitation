@@ -50,5 +50,15 @@
 		"address_copied": "주소를 복사했습니다.",
 		"venue": "웨드유 웨딩 (구.고려스퀘어)",
 		"address": "서울특별시 성북구 종암동 29-26"
+	},
+	"transportation": {
+		"subway_title": "지하철",
+		"subway_content": "지하철 6호선 고려대역 2번 출구 (도보 3분)",
+		"bus_title": "버스",
+		"bus_content1": "정류장명: 고려대학교 앞",
+		"bus_content2": "간선: 101, 111, 144, 173, 273",
+		"bus_content3": "지선: 1017, 1111, 1222, 2222, 7211",
+		"parking_title": "주차",
+		"parking_content": "고려대학교 교우회관 주차장 이용 (2시간 무료 주차)"
 	}
 }

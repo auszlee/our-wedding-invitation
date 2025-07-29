@@ -70,18 +70,18 @@
 	<div class="content {localeStore.locale}" transition:slide={{ duration: 350 }}>
 		<div class="transportation-info">
 			<div class="info-group">
-				<p class="info-title">지하철</p>
-				<p class="info-content">지하철 6호선 고려대역 2번 출구 (도보 3분)</p>
+				<p class="info-title {localeStore.locale}">{$_('transportation.subway_title')}</p>
+				<p class="info-content {localeStore.locale}">{$_('transportation.subway_content')}</p>
 			</div>
 			<div class="info-group">
-				<p class="info-title">버스</p>
-				<p class="info-content">정류장명: 고려대학교 앞</p>
-				<p class="info-content">간선 101, 111, 144, 173, 273</p>
-				<p class="info-content">지선: 1017, 1111, 1222, 2222, 7211</p>
+				<p class="info-title {localeStore.locale}">{$_('transportation.bus_title')}</p>
+				<p class="info-content {localeStore.locale}">{$_('transportation.bus_content1')}</p>
+				<p class="info-content {localeStore.locale}">{$_('transportation.bus_content2')}</p>
+				<p class="info-content {localeStore.locale}">{$_('transportation.bus_content3')}</p>
 			</div>
 			<div class="info-group">
-				<p class="info-title">주차</p>
-				<p class="info-content">고려대학교 교우회관 주차장 이용 (2시간 무료 주차)</p>
+				<p class="info-title {localeStore.locale}">{$_('transportation.parking_title')}</p>
+				<p class="info-content {localeStore.locale}">{$_('transportation.parking_content')}</p>
 			</div>
 		</div>
 	</div>
