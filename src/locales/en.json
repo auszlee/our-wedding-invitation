@@ -46,5 +46,15 @@
 		"address_copied": "The address is copied!",
 		"venue": "Weedyu Wedding (formerly Goryo Square)",
 		"address": "29-26 Jongam-dong, Seongbuk District, Seoul"
+	},
+	"transportation": {
+		"subway_title": "Subway",
+		"subway_content": "Line 6 – Korea University Station, Exit 2 (3-minute walk)",
+		"bus_title": "Bus",
+		"bus_content1": "Bus Stop: Korea University",
+		"bus_content2": "101, 111, 144, 173, 273",
+		"bus_content3": "1017, 1111, 1222, 2222, 7211",
+		"parking_title": "Parking",
+		"parking_content": "Free parking available for 2 hours at Korea University Alumni Hall parking lot"
 	}
 }
