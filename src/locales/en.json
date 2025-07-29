@@ -4,13 +4,13 @@
 	},
 	"cover": {
 		"date": "9.6.2025 Sat. 1:00 pm",
-		"place": "Weedyu Wedding (formerly Goryo Square)"
+		"place": "Wedyou Wedding (formerly Goryo Square)"
 	},
 	"letter": {
 		"date": "Sept.6.2025",
 		"date_time": "1:00 pm",
-		"sub_title": "You're invited to our wedding!",
-		"letter_content": "You've been with us through so many unforgettable moments — college days, camping trips, and celebrating life together.\nPlease join us for one of the biggest milestones yet! We'd be overjoyed to have you witness and celebrate our wedding as we embark on this new chapter together."
+		"sub_title": "You are welcomly invited to our wedding!",
+		"letter_content": "You've been with us through so many unforgettable moments — college days, camping trips, and celebrating life together.\nPlease join us for one of the biggest milestones yet! We'd be happy to have you witness and celebrate our wedding as we embark on this new chapter together."
 	},
 	"rsvp": {
 		"title": "RSVP",
@@ -44,7 +44,7 @@
 	"location": {
 		"title": "Location",
 		"address_copied": "The address is copied!",
-		"venue": "Weedyu Wedding (formerly Goryo Square)",
+		"venue": "Wedyou Wedding (formerly Goryo Square)",
 		"address": "29-26 Jongam-dong, Seongbuk District, Seoul"
 	},
 	"transportation": {
