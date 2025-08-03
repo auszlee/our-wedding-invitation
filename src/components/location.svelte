@@ -1,10 +1,13 @@
 <script lang="ts">
-	// import { onMount } from 'svelte';
+	import { onMount } from 'svelte';
 	import locationDeco from '$lib/assets/location-deco.svg';
 	import { _ } from 'svelte-i18n';
 	import { localeStore } from '../i18n.svelte';
 	import { Clipboard, Github } from '@lucide/svelte';
 	import { slide } from 'svelte/transition';
+
+	let showMap = false;
+	let mapRef: HTMLDivElement;
 
 	const googleMapsUrl =
 		'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6322.860406727866!2d127.035685!3d37.592033!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cbcbc8d707a77%3A0x195d6ec549202318!2z6rOg66Ck64yA7ZWZ6rWQIOq1kOyasO2ajOq0gA!5e0!3m2!1sko!2skr!4v1745824760525!5m2!1sko!2skr';
@@ -21,6 +24,7 @@
 	// 	marker.setMap(map);
 	// }
 
+	// --- kakao
 	// onMount(() => {
 	// 	const waitForKakao = () => {
 	// 		if (typeof kakao !== 'undefined' && kakao.maps) {
@@ -33,6 +37,22 @@
 	// 	};
 	// 	waitForKakao();
 	// });
+
+	// --- google maps
+	onMount(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						showMap = true;
+						observer.disconnect();
+					}
+				});
+			},
+			{ threshold: 0.1 }
+		);
+		if (mapRef) observer.observe(mapRef);
+	});
 
 	function copyAddress() {
 		const address = $_('location.address');
@@ -62,15 +82,19 @@
 	>
 	<!-- <div id="kakaomap" class="map"></div> -->
 
-	<div class="map">
-		<iframe
-			class="google-maps"
-			title="google maps"
-			allowfullscreen
-			referrerpolicy="no-referrer-when-downgrade"
-			src={googleMapsUrl}
-		></iframe>
+	<!-- <div class="map"> -->
+	<div class="map" bind:this={mapRef}>
+		{#if showMap}
+			<iframe
+				class="google-maps"
+				title="google maps"
+				allowfullscreen
+				referrerpolicy="no-referrer-when-downgrade"
+				src={googleMapsUrl}
+			></iframe>
+		{/if}
 	</div>
+
 	<div class="content {localeStore.locale}" transition:slide={{ duration: 350 }}>
 		<div class="transportation-info">
 			<div class="info-group">
