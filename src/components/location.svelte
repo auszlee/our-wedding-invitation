@@ -1,35 +1,38 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	// import { onMount } from 'svelte';
 	import locationDeco from '$lib/assets/location-deco.svg';
 	import { _ } from 'svelte-i18n';
 	import { localeStore } from '../i18n.svelte';
 	import { Clipboard, Github } from '@lucide/svelte';
 	import { slide } from 'svelte/transition';
 
-	function initializeMap() {
-		const container = document.getElementById('kakaomap');
-		const center = new kakao.maps.LatLng(37.59203234903392, 127.03569422628917);
-		const options = {
-			center,
-			level: 3
-		};
-		const map = new kakao.maps.Map(container, options);
-		const marker = new kakao.maps.Marker({ position: center });
-		marker.setMap(map);
-	}
+	const googleMapsUrl =
+		'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6322.860406727866!2d127.035685!3d37.592033!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cbcbc8d707a77%3A0x195d6ec549202318!2z6rOg66Ck64yA7ZWZ6rWQIOq1kOyasO2ajOq0gA!5e0!3m2!1sko!2skr!4v1745824760525!5m2!1sko!2skr';
 
-	onMount(() => {
-		const waitForKakao = () => {
-			if (typeof kakao !== 'undefined' && kakao.maps) {
-				kakao.maps.load(() => {
-					initializeMap();
-				});
-			} else {
-				setTimeout(waitForKakao, 100);
-			}
-		};
-		waitForKakao();
-	});
+	// function initializeMap() {
+	// 	const container = document.getElementById('kakaomap');
+	// 	const center = new kakao.maps.LatLng(37.59203234903392, 127.03569422628917);
+	// 	const options = {
+	// 		center,
+	// 		level: 3
+	// 	};
+	// 	const map = new kakao.maps.Map(container, options);
+	// 	const marker = new kakao.maps.Marker({ position: center });
+	// 	marker.setMap(map);
+	// }
+
+	// onMount(() => {
+	// 	const waitForKakao = () => {
+	// 		if (typeof kakao !== 'undefined' && kakao.maps) {
+	// 			kakao.maps.load(() => {
+	// 				initializeMap();
+	// 			});
+	// 		} else {
+	// 			setTimeout(waitForKakao, 100);
+	// 		}
+	// 	};
+	// 	waitForKakao();
+	// });
 
 	function copyAddress() {
 		const address = $_('location.address');
@@ -41,11 +44,12 @@
 	}
 </script>
 
+<!-- 
 <svelte:head>
 	<script
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a6f047a232b41430897e05564b19c29f&autoload=false"
 	></script>
-</svelte:head>
+</svelte:head> -->
 
 <section class="location">
 	<h2 class="title {localeStore.locale}">{$_('location.title')}</h2>
@@ -56,9 +60,9 @@
 		</span>
 		<span class="address">{$_('location.address')}</span></button
 	>
-	<div id="kakaomap" class="map"></div>
+	<!-- <div id="kakaomap" class="map"></div> -->
 
-	<!-- <div class="map">
+	<div class="map">
 		<iframe
 			class="google-maps"
 			title="google maps"
@@ -66,7 +70,7 @@
 			referrerpolicy="no-referrer-when-downgrade"
 			src={googleMapsUrl}
 		></iframe>
-	</div> -->
+	</div>
 	<div class="content {localeStore.locale}" transition:slide={{ duration: 350 }}>
 		<div class="transportation-info">
 			<div class="info-group">
