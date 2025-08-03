@@ -5,7 +5,7 @@ register('en', () => import('./locales/en.json'));
 
 init({
 	fallbackLocale: 'kr',
-	initialLocale: getLocaleFromQueryString('lang')
+	initialLocale: getLocaleFromQueryString('lang') || 'kr'
 });
 
 class LocaleStore {
