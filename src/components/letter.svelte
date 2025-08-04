@@ -61,6 +61,11 @@
 		margin-bottom: 0.8em;
 	}
 
+	img.letter-bottom {
+		display: block;
+		margin: 0 auto;
+	}
+
 	.title {
 		color: $primary-color;
 		letter-spacing: 1px;
